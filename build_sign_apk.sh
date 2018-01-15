@@ -31,7 +31,7 @@
 
 filename=$(echo $1 | cut -f 1 -d ".")
 
-package=$(head Chess_v2/AndroidManifest.xml | egrep -oh 'package=\"[A-Za-z\.0-9]*"\s' | cut -f 2 -d "\"")
+package=$(head $filename/AndroidManifest.xml | egrep -oh 'package=\"[A-Za-z\.0-9]*"\s' | cut -f 2 -d "\"")
 echo $package
 echo -e "\n\n\t1. Decompile APK and Generate Java Sources\n\t2. Build APK and Sign"
 
